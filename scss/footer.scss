@@ -1,0 +1,99 @@
+footer {
+    background-image: linear-gradient(to bottom, $colorOceano, $colorCielo);
+    & .contactDecoration{
+        padding: 10px 50px;
+    }
+    label{
+        font-size: 2rem;
+        margin-right: 20px;
+    }
+    a {
+        text-decoration: none;
+        color: $colorNegro;
+        font-size: 1.5rem;
+
+        &:hover {
+            text-decoration: underline;
+            color: $colorBlanco;
+        }
+    }
+
+    input {
+        position: relative;
+        display: inline-block;
+        font-size: 2rem;
+        box-sizing: border-box;
+        &[type="email"] {
+            background: #fff;
+            width: 340px;
+            height: 50px;
+            padding: 0 25px;
+            border-radius: 8px 0 0 8px;
+        }
+
+        &[type="submit"] {
+            position: relative;
+            border-radius: 0 8px 8px 0;
+            width: 150px;
+            height: 50px;
+            cursor: pointer;
+            background: rgb(0, 76, 255);
+            color: #fff;
+            padding-left: 30px;
+
+            &:hover {
+                background: aqua;
+            }
+        }
+    }
+}
+
+.flexEndFooter{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+//estilos para mobile
+@media screen and (max-width: 768px) {
+    footer {
+        & input[type="submit"] {
+            position: relative;
+            border-radius: 0 0 8px 8px;
+            width: 80%;
+            margin: 0 10%;
+            height: 4rem;
+            cursor: pointer;
+            background: rgb(0, 76, 255);
+            color: #fff;
+            padding: 0;
+            text-align: center;
+
+            &:hover {
+                background: aqua;
+            }
+        }
+
+        & section.contactDecoration {
+            & h3 {
+                width: 80%;
+                margin: 2% 10%;
+            }
+
+            & label {
+                display: block;
+                font-size: 2.1rem;
+                width: 80%;
+                margin: 4% 10%;
+            }
+        }
+
+        & input[type="email"] {
+            background: $colorBlanco;
+            width: 80%;
+            height: 50px;
+            padding: 5%;
+            margin: 0 10%;
+            border-radius: 8px 8px 0 0;
+        }
+    }
+}

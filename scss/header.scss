@@ -1,0 +1,63 @@
+header{
+    height: auto;
+    background-image: linear-gradient(to left, $colorMonster, $colorPatito, $colorMandarina, $colorPrimario);
+    & nav ul li{
+        list-style-type: none;
+        font-size: 2rem;
+        margin: 20px;
+        a{
+            text-decoration: none;
+            padding: 6px 15px;
+            color: $colorBlanco;
+            border-radius: 20px;
+            &:hover,&.active{
+                background: $colorBlanco;
+                color: $colorPrimario;
+            }
+        }
+    }
+}
+// estilos para desktop
+@media screen and (min-width: 1024px){
+    //flexbox
+    header,ul{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .row-reverse{
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    .accountDerecha{
+        justify-content: flex-end;
+    }
+    //grid
+    .navegador{
+        width: 100%;
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "gridlogo gridNavIzq gridNavDer";
+        & .gridlogo{
+            grid-area: gridlogo;
+        }
+        & .gridNavDer{
+            grid-area: gridNavDer;
+        }
+        & .gridNavIzq{
+            grid-area: gridNavIzq;
+        }
+    }
+}
+// estilos para mobile
+@media screen and (max-width: 768px){
+    // flexbox
+    .navegador,ul{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+}
